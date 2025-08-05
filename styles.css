@@ -60,3 +60,43 @@ header span {
 #main-heading span {
   color: var(--primary-color);
 }
+
+#movies {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+  padding: 3rem;
+  gap: 2rem;
+}
+
+#movie-container {
+  background-color: #1a1a1a;
+  width: 450px;
+  height: 550px;
+  padding: 2rem;
+  margin: 0 auto;
+}
+
+#movie-title,
+#movie-year {
+  color: var(--light-color);
+  font-size: 1.2rem;
+  margin: 0.5rem 0;
+}
+
+#movie-poster {
+  width: 100%;
+  object-fit: cover;
+  height: 400px;
+}
+
+#not-found {
+  color: var(--light-color);
+  text-align: center;
+}
+
+#loading {
+  display: none;
+  color: var(--light-color);
+  text-align: center;
+  margin-top: 6rem;
+}
