@@ -1,0 +1,62 @@
+* {
+  font-family:
+    "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans",
+    Arial, sans-serif;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --primary-color: #ddad00;
+  --background-color: #000000;
+  --light-color: #ffffff;
+  --search-bg-col: #10161d;
+  --search-txt-col: #e6e6e6;
+}
+
+body {
+  background-color: var(--background-color);
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 30px;
+  box-shadow: 0 2px 5px #00000050;
+  color: var(--light-color);
+}
+
+header span {
+  color: var(--primary-color);
+}
+
+#query {
+  background-color: var(--search-bg-col);
+  color: var(--search-txt-col);
+  border: none;
+  padding: 10px;
+  width: 300px;
+}
+
+#searchBtn {
+  background-color: var(--primary-color);
+  border: none;
+  font-size: 1rem;
+  padding: 0.4rem;
+  font-weight: bold;
+}
+
+#query:focus {
+  outline: none;
+}
+
+#main-heading {
+  color: var(--light-color);
+  text-align: center;
+}
+
+#main-heading span {
+  color: var(--primary-color);
+}
