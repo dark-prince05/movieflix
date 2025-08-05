@@ -8,7 +8,7 @@
 }
 
 :root {
-  --primary-color: #ddad00;
+  --primary-color: #fbcb1a;
   --background-color: #000000;
   --light-color: #ffffff;
   --search-bg-col: #10161d;
@@ -38,6 +38,7 @@ header span {
   border: none;
   padding: 10px;
   width: 300px;
+  border-radius: 5px;
 }
 
 #searchBtn {
@@ -46,6 +47,7 @@ header span {
   font-size: 1rem;
   padding: 0.4rem;
   font-weight: bold;
+  border-radius: 5px;
 }
 
 #query:focus {
@@ -69,11 +71,12 @@ header span {
 }
 
 #movie-container {
-  background-color: #1a1a1a;
+  background-color: var(--search-bg-col);
   width: 450px;
   height: 550px;
   padding: 2rem;
   margin: 0 auto;
+  transition: transform 0.3s ease-in;
 }
 
 #movie-title,
@@ -99,4 +102,117 @@ header span {
   color: var(--light-color);
   text-align: center;
   margin-top: 6rem;
+}
+
+#movie-container:hover {
+  transform: scale(1.03);
+  cursor: pointer;
+}
+
+#searchBtn:hover {
+  background-color: #ddad00;
+  cursor: pointer;
+}
+
+#searchBtn:active {
+  transform: scale(0.95);
+}
+
+@media screen and (max-width: 600px) {
+  header {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+  }
+
+  header div {
+    align-self: end;
+  }
+
+  #query {
+    margin-top: 1rem;
+    width: 250px;
+  }
+}
+
+@media screen and (max-width: 470px) {
+  header {
+    padding: 15px 10px;
+  }
+
+  header h1 {
+    align-self: center;
+    font-size: 1.8rem;
+  }
+
+  #query {
+    padding: 6px;
+    width: 200px;
+  }
+
+  #searchBtn {
+    font-size: 0.8rem;
+  }
+
+  #main-heading {
+    font-size: 1.6rem;
+    margin-top: 1rem;
+  }
+
+  #main-heading span {
+    color: var(--primary-color);
+  }
+
+  #movies {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    padding: 0.4rem;
+    margin-top: 1rem;
+    gap: 1rem;
+  }
+
+  #movie-container {
+    width: 320px;
+    height: 350px;
+    padding: 1rem;
+  }
+
+  #movie-title,
+  #movie-year {
+    color: var(--light-color);
+    font-size: 1rem;
+  }
+
+  #movie-poster {
+    width: 100%;
+    object-fit: cover;
+    height: 220px;
+  }
+
+  #not-found {
+    color: var(--light-color);
+    text-align: center;
+    font-size: 1.2rem;
+  }
+
+  #loading {
+    display: none;
+    color: var(--light-color);
+    text-align: center;
+    margin-top: 6rem;
+  }
+
+  #movie-container:hover {
+    transform: scale(1.03);
+    cursor: pointer;
+  }
+
+  #searchBtn:hover {
+    background-color: #ddad00;
+    cursor: pointer;
+  }
+
+  #searchBtn:active {
+    transform: scale(0.95);
+  }
 }

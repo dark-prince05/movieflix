@@ -3,6 +3,7 @@ const input = document.querySelector("#query");
 const searchBtn = document.querySelector("#searchBtn");
 const movies = document.querySelector("#movies");
 const loading = document.querySelector("#loading");
+const mainHeading = document.querySelector("#main-heading");
 
 // fetch data from the server using fetch API, here i'm using async and await to fetch data
 const retrieveData = async (movieName) => {
@@ -50,6 +51,7 @@ input.addEventListener("keydown", async (e) => {
 const display = (data) => {
   // in this function the data is converted into html elements and append it to the dom
   movies.textContent = "";
+  mainHeading.style.display = "block";
 
   data.Search.forEach((movie) => {
     const movieContainer = document.createElement("div");
@@ -92,6 +94,7 @@ const displayError = (msg) => {
   const notFound = document.createElement("h2");
   notFound.textContent = msg;
   notFound.id = "not-found";
+  mainHeading.style.display = "none";
 
   movies.appendChild(notFound);
 };
