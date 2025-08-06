@@ -28,6 +28,15 @@ header {
   color: var(--light-color);
 }
 
+header h1::after {
+  content: "";
+  display: block;
+  height: 3px;
+  width: 0;
+  background-color: var(--primary-color);
+  animation: underline 3s 1 linear alternate forwards;
+}
+
 header span {
   color: var(--primary-color);
 }
@@ -76,6 +85,7 @@ header span {
   height: 550px;
   padding: 2rem;
   margin: 0 auto;
+  border-radius: 5px;
   transition: transform 0.3s ease-in;
 }
 
@@ -90,6 +100,7 @@ header span {
   width: 100%;
   object-fit: cover;
   height: 400px;
+  border-radius: 5px;
 }
 
 #not-found {
@@ -116,6 +127,15 @@ header span {
 
 #searchBtn:active {
   transform: scale(0.95);
+}
+
+@keyframes underline {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
+  }
 }
 
 @media screen and (max-width: 600px) {

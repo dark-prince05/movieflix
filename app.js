@@ -19,6 +19,7 @@ const retrieveData = async (movieName) => {
     loading.style.display = "none"; // to hide the loading msg after the data retrieval
     if (data.Response === "True") {
       // if response is true it returns the data else display the error
+      console.log(data);
       return data;
     } else {
       displayError(data.Error);
@@ -35,6 +36,7 @@ searchBtn.addEventListener("click", async () => {
   if (data) {
     display(data);
   }
+  input.value = "";
 });
 
 input.addEventListener("keydown", async (e) => {
@@ -45,6 +47,7 @@ input.addEventListener("keydown", async (e) => {
     if (data) {
       display(data);
     }
+    input.value = "";
   }
 });
 
