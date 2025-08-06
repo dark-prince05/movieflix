@@ -29,8 +29,8 @@ const retrieveData = async (movieName) => {
   }
 };
 
+// this is where data is retrieved and displayed on the page (using search button)
 searchBtn.addEventListener("click", async () => {
-  // this is where data is retrieved and displayed on the page (using search button)
   if (input.value.trim() === "") return;
   const data = await retrieveData(input.value);
   if (data) {
@@ -39,8 +39,8 @@ searchBtn.addEventListener("click", async () => {
   input.value = "";
 });
 
+// this is where data is retrieved and displayed on the page (usign Enter button on the keyboard)
 input.addEventListener("keydown", async (e) => {
-  // this is where data is retrieved and displayed on the page (usign Enter button on the keyboard)
   if (e.key === "Enter") {
     if (input.value.trim() === "") return;
     const data = await retrieveData(input.value);
@@ -51,8 +51,8 @@ input.addEventListener("keydown", async (e) => {
   }
 });
 
+// in this function the data is converted into html elements and append it to the dom
 const display = (data) => {
-  // in this function the data is converted into html elements and append it to the dom
   movies.textContent = "";
   mainHeading.style.display = "block";
 
@@ -76,23 +76,24 @@ const display = (data) => {
         "https://images.unsplash.com/photo-1440404653325-ab127d49abc1?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fG1vdmllfGVufDB8fDB8fHww";
     };
     image.alt = movie.Title;
-    image.id = "movie-poster";
+    image.classList.add("movie-poster");
     title.textContent = `Title: ${movie.Title}`;
-    title.id = "movie-title";
+    title.classList.add("movie-title");
     year.textContent = `Release Year: ${movie.Year}`;
     year.id = "movie-year";
+    year.classList.add("movie-year");
 
     movieContainer.appendChild(image);
     movieContainer.appendChild(title);
     movieContainer.appendChild(year);
-    movieContainer.id = "movie-container";
+    movieContainer.classList.add("movie-container");
 
     movies.appendChild(movieContainer);
   });
 };
 
+// this function is used to display the error msg
 const displayError = (msg) => {
-  // this function is used to display the error msg
   movies.textContent = "";
   const notFound = document.createElement("h2");
   notFound.textContent = msg;

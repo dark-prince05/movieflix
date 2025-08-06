@@ -79,7 +79,7 @@ header span {
   gap: 2rem;
 }
 
-#movie-container {
+.movie-container {
   background-color: var(--search-bg-col);
   width: 450px;
   height: 550px;
@@ -89,14 +89,14 @@ header span {
   transition: transform 0.3s ease-in;
 }
 
-#movie-title,
-#movie-year {
+.movie-title,
+.movie-year {
   color: var(--light-color);
   font-size: 1.2rem;
   margin: 0.5rem 0;
 }
 
-#movie-poster {
+.movie-poster {
   width: 100%;
   object-fit: cover;
   height: 400px;
@@ -115,7 +115,7 @@ header span {
   margin-top: 6rem;
 }
 
-#movie-container:hover {
+.movie-container:hover {
   transform: scale(1.03);
   cursor: pointer;
 }
@@ -191,19 +191,19 @@ header span {
     gap: 1rem;
   }
 
-  #movie-container {
+  .movie-container {
     width: 320px;
     height: 350px;
     padding: 1rem;
   }
 
-  #movie-title,
-  #movie-year {
+  .movie-title,
+  .movie-year {
     color: var(--light-color);
     font-size: 1rem;
   }
 
-  #movie-poster {
+  .movie-poster {
     width: 100%;
     object-fit: cover;
     height: 220px;
@@ -220,19 +220,5 @@ header span {
     color: var(--light-color);
     text-align: center;
     margin-top: 6rem;
-  }
-
-  #movie-container:hover {
-    transform: scale(1.03);
-    cursor: pointer;
-  }
-
-  #searchBtn:hover {
-    background-color: #ddad00;
-    cursor: pointer;
-  }
-
-  #searchBtn:active {
-    transform: scale(0.95);
   }
 }
