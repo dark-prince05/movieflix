@@ -14,6 +14,11 @@ Live Preview: https://dark-prince05.github.io/movieflix/
    Used to fetch a list of movies based on the user's search input.  
   This provides basic information like the movie title, release year, poster, and IMDb ID.
 
+- **Detailed Endpoint**:
+  `https://www.omdbapi.com/?i={IMDB_ID}&apikey={YOUR_API_KEY}`  
+  Used to fetch detailed information about a selected movie using its IMDb ID.  
+  This includes genre, director, plot, rating, language, and runtime — all shown in a separate dialog box when a movie card is clicked.
+
 ## Setup
 
 ### 1.Clone this repo
@@ -27,13 +32,16 @@ Sign up for a free key at http://www.omdbapi.com/apikey.aspx
 
 ### 3.Insert your API key
 
-In the `app.js` file, find this line:
-
-`js`
+In the `app.js` file, find these lines:
 
 const response = await fetch(  
-`https://www.omdbapi.com/?s=${movieName}&apikey=YOUR_API_KEY_HERE`,  
-{ mode: "cors" },  
+&nbsp;&nbsp;&nbsp;`https://www.omdbapi.com/?s=${movieName}&apikey=YOUR_API_KEY_HERE`,  
+&nbsp;&nbsp;&nbsp;{ mode: "cors" }  
+);
+
+const response = await fetch(  
+&nbsp;&nbsp;&nbsp;`https://www.omdbapi.com/?i=${movieId}&apikey=YOUR_API_KEY_HERE`,  
+&nbsp;&nbsp;&nbsp;{ mode: "cors" }  
 );
 
 Replace YOUR_API_KEY_HERE with the key you get from http://www.omdbapi.com/apikey.aspx
@@ -52,6 +60,18 @@ Or use a simple Live Server extension in VS Code for best results.
 - Poster (with fallback image if not available)
 - Title
 - Release Year
+
+4.Click on any movie card to open a pop-up showing:
+
+- Poster (with fallback image if not available)
+- Title
+- Release Year
+- Director
+- Genre
+- Plot Summary
+- Language
+- Runtime
+- IMDb Rating
   If there are any errors (no results, bad input, internet issues), an appropriate message will be shown instead of breaking the app.
 
 ## Challenges
